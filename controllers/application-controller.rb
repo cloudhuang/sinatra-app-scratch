@@ -8,12 +8,8 @@ require 'sinatra/auth'
 require 'sinatra/contact'
 require 'sinatra/flash'
 require 'asset-handler'
-require "sinatra/reloader" if development?
 
 class ApplicationController < Sinatra::Base
-	configure :development do
-    	register Sinatra::Reloader
-  	end
 
     helpers ApplicationHelpers
     set :views, File.expand_path('../../views', __FILE__)
